@@ -1,0 +1,134 @@
+openapi: 3.0.0
+info:
+  title: Sample API
+  version: 1.0.0
+servers:
+- url: **YOUR API URL**
+x-yc-apigateway:
+  cors:
+    origin: '**YOUR REACT SERVING SERVER URL**'
+    methods: '*'
+    allowHeaders: '*'
+paths:
+  /login:
+    post:
+      x-yc-apigateway-integration:
+        type: cloud_functions
+        function_id: **YOUR MAIN API FUNCTION ID**
+        tag: "$latest"
+        service_account_id: **YOUR SERVICE ACCOUNT ID**
+      operationId: user-login
+  /logout:
+    post:
+      security:
+        - ApiKeyAuth: []
+      x-yc-apigateway-integration:
+        type: cloud_functions
+        function_id: **YOUR MAIN API FUNCTION ID**
+        tag: "$latest"
+        service_account_id: **YOUR SERVICE ACCOUNT ID**
+      operationId: user-logout
+  /userdata:
+    get:
+      security:
+        - ApiKeyAuth: []
+      x-yc-apigateway-integration:
+        type: cloud_functions
+        function_id: **YOUR MAIN API FUNCTION ID**
+        tag: "$latest"
+        service_account_id: **YOUR SERVICE ACCOUNT ID**
+      operationId: user-get-data
+  /questionnaire/{ID}:
+    get:
+      x-yc-apigateway-integration:
+        type: cloud_functions
+        function_id: **YOUR MAIN API FUNCTION ID**
+        tag: "$latest"
+        service_account_id: **YOUR SERVICE ACCOUNT ID**
+      parameters:
+        - name: ID
+          in: path
+          description: Return ID
+          required: true
+          schema:
+            type: string
+      operationId: questionnaire-get
+    put:
+      security:
+        - ApiKeyAuth: []
+      x-yc-apigateway-integration:
+        type: cloud_functions
+        function_id: **YOUR MAIN API FUNCTION ID**
+        tag: "$latest"
+        service_account_id: **YOUR SERVICE ACCOUNT ID**
+      parameters:
+        - name: ID
+          in: path
+          description: Return ID
+          required: true
+          schema:
+            type: string
+      operationId: questionnaire-put
+    delete:
+      security:
+        - ApiKeyAuth: []
+      x-yc-apigateway-integration:
+        type: cloud_functions
+        function_id: **YOUR MAIN API FUNCTION ID**
+        tag: "$latest"
+        service_account_id: **YOUR SERVICE ACCOUNT ID**
+      parameters:
+        - name: ID
+          in: path
+          description: Return ID
+          required: true
+          schema:
+            type: string
+      operationId: questionnaire-delete
+  /questionnaires:
+    get:
+      security:
+        - ApiKeyAuth: []
+      x-yc-apigateway-integration:
+        type: cloud_functions
+        function_id: **YOUR MAIN API FUNCTION ID**
+        tag: "$latest"
+        service_account_id: **YOUR SERVICE ACCOUNT ID**
+      operationId: questionnaires-get
+  /questionnaire:
+    post:
+      security:
+        - ApiKeyAuth: []
+      x-yc-apigateway-integration:
+        type: cloud_functions
+        function_id: **YOUR MAIN API FUNCTION ID**
+        tag: "$latest"
+        service_account_id: **YOUR SERVICE ACCOUNT ID**
+      operationId: questionnaire-create
+  /questionnaire/{ID}/send:
+    post:
+      x-yc-apigateway-integration:
+        type: cloud_functions
+        function_id: **YOUR MAIN API FUNCTION ID**
+        tag: "$latest"
+        service_account_id: **YOUR SERVICE ACCOUNT ID**
+      parameters:
+        - name: ID
+          in: path
+          description: Return ID
+          required: true
+          schema:
+            type: string
+      operationId: questionnaire-send-answer
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-KEY
+      x-yc-apigateway-authorizer:
+        type: function
+        function_id: **YOUR API AUTH FUNCTION ID**
+        tag: "$latest"
+        service_account_id: **YOUR SERVICE ACCOUNT ID**
+        authorizer_result_ttl_in_seconds: 300
