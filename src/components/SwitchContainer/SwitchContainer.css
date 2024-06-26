@@ -1,0 +1,19 @@
+.switch_container {
+    border-radius: 10px;
+    border: solid #903814 3px;
+    display: flex;
+    align-items: center;
+}
+
+.switch_button {
+    font-family: 'Kurale', sans-serif;
+    color: #903814;
+    text-align: center;
+    cursor: pointer;
+    transition: .1s ease-in-out;
+}
+
+.switch_button:hover {
+    background-color: #903814;
+    color: white;
+}

@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Kurale',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+@font-face {
+  font-family: "Kurale";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../public/fonts/Kurale-Regular.ttf")
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#root {
+  width: 100%;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.background_image {
+  width: 100%;
+  position: absolute;
+  margin-top: 50px;
+  filter: blur(5px) drop-shadow(0px 17px #361508);
+  z-index: -1;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.invisible_submit {
+  display: none;
+}
+
+.loader_wrapper {
+  width: 100%;
+  height: 100vh;
+  background-color: #491D0B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.status_svg_img {
+  width: 30px;
+}
+
+.darked_background {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.close_button {
+  margin-left: 10px;
+  cursor: pointer;
+}

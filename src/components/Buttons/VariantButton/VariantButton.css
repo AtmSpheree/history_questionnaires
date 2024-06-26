@@ -1,0 +1,36 @@
+.variant_button {
+    font-family: 'Kurale', sans-serif;
+    color: black;
+    padding: 5px;
+    max-width: 420px;
+    width: 100%;
+    background-color: #F2F0EE;
+    border-radius: 46px;
+    border: solid #C14D1D 5px;
+    text-align: center;
+    transition: .1s ease-in-out;
+    cursor: pointer;
+}
+
+.variant_button:hover {
+    background-color: #C14D1D;
+    color: white
+}
+
+.variant_button:active {
+    background-color: #491D0B;
+    border: solid #491D0B 5px;
+}
+
+@media only screen and (hover: hover) {
+    .variant_button:hover {
+        background-color: #C14D1D;
+        color: white;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .variant_button {
+        width: 95%;
+    }
+}

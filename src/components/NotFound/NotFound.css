@@ -1,0 +1,9 @@
+.not_found_text {
+    font-family: 'Kurale', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+    padding: 0 5px;
+}

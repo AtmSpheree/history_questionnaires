@@ -1,0 +1,23 @@
+.default_button {
+    outline: 0;
+    border: 0;
+    font-family: 'Kurale', sans-serif;
+    cursor: pointer;
+    margin: 0;
+    font-size: 30px;
+}
+
+.default_button_line {
+    position: relative;
+    top: -3px;
+    height: 3px;
+    width: 0;
+    border-radius: 5px;
+    transition: width .1s ease-in-out;
+}
+
+@media only screen and (hover: hover) {
+    .default_button:hover + .default_button_line {
+        width: 100%;
+    }
+}

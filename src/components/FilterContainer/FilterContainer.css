@@ -1,0 +1,38 @@
+.filter_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+}
+
+.filter_container_text {
+    font-family: 'Kurale', sans-serif;
+    font-size: 25px;
+    color: black;
+    min-width: 190px;
+}
+
+.filter_container_variant,
+.filter_container_variant_selected {
+    font-family: 'Kurale', sans-serif;
+    font-size: 25px;
+    color: #903814;
+    border-radius: 10px;
+    padding: 3px 7px;
+    border: solid #903814 3px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.filter_container_variant_selected {
+    color: white;
+    background-color: #903814;
+}
+
+@media only screen and (max-width: 500px) {
+    .filter_container_variant,
+    .filter_container_variant_selected {
+        font-size: 20px;
+    }
+}

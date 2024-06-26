@@ -1,0 +1,86 @@
+.send_answer_main_title {
+    font-family: 'Kurale', sans-serif;
+    font-size: 36px;
+    width: 80%;
+    margin-top: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+}
+
+.enter_user_data_field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    margin-top: 40px;
+    width: 95%;
+    max-width: 850px;
+    border-radius: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: solid 5px #C14D1D;
+    margin-bottom: 10px;
+}
+
+.if_sent_container {
+    margin-top: 75px;
+    margin-bottom: 75px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transition: .5s ease-in-out;
+    gap: 30px;
+}
+
+.cup_img {
+    width: 300px;
+}
+
+.is_sent_container_text {
+    font-family: 'Kurale', sans-serif;
+    font-size: 40px;
+    color: black;
+    text-align: center;
+    margin: 0 5px;
+}
+
+.is_sent_container_text > span {
+    color: #C14D1D;
+}
+
+.enter_user_data_field_container {
+    display: flex !important;
+}
+
+.enter_user_data_field_container_short {
+    display: none !important;
+}
+
+.enter_user_data_field_send_button {
+    margin-left: 10px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .enter_user_data_field {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .enter_user_data_field {
+        width: 85%;
+    }
+
+    .enter_user_data_field_container {
+        display: none !important;
+    }
+
+    .enter_user_data_field_container_short {
+        display: flex !important;
+    }
+}

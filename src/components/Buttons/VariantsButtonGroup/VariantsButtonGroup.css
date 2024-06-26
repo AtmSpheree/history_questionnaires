@@ -1,0 +1,14 @@
+.variants_container {
+    display: grid;
+    width: 100%;
+    max-width: 850px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    justify-items: center;
+    gap: 35px;
+}
+
+@media only screen and (max-width: 500px) {
+    .variants_container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
